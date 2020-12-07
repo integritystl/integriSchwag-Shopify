@@ -24,7 +24,7 @@ A Shopify-based eCommerce solution
 
 * [Node](https://nodejs.org/)
 * [ThemeKit](https://www.shopify.com/partners/blog/95401862-3-simple-steps-for-setting-up-a-local-shopify-theme-development-environment)
-* [Development Process and Quick Start Guide] (https://docs.google.com/document/d/1ZKqoDEm1bPg-bH-eXxjMQcgwkdkOeO5HUyygxznfY9w/edit?usp=sharing)
+* [Development Process and Quick Start Guide](https://docs.google.com/document/d/1ZKqoDEm1bPg-bH-eXxjMQcgwkdkOeO5HUyygxznfY9w/edit?usp=sharing)
 
 **If you have the above installed, run these commands in order:**
 
