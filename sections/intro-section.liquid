@@ -1,0 +1,78 @@
+<!-- start intro section block -->
+<div class="intro-section">
+  <div class="page-width">
+    <div class="content-left">
+        <h1>{{section.settings.tagline-text}}</h1>
+        {{section.settings.text-below-header}}
+
+        <p><a href="{{section.settings.button-link}}" class="button">{{section.settings.button-text}}</a></p>
+    </div>
+
+    <div class="content-right">
+        <div class="featured-product">
+            {{section.settings.featured-product.images}}
+        </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Intro Section",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Tagline intro text",
+        "id": "tagline-text"
+      },
+      {
+        "type": "richtext",
+        "label": "Text below header",
+        "id": "text-below-header"
+      },
+      {
+        "type": "text",
+        "label": "Button text",
+        "id": "button-text"
+      },
+      {
+        "type": "url",
+        "label": "Button link",
+        "id": "button-link"
+      },
+      {
+        "type": "product",
+        "label": "Select featured product",
+        "id": "featured-product"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Custom Blocks",
+        "name": "Intro Section"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+
+  .intro-section h1 {
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 750px) {
+    .intro-section .content-left {
+      width: 50%;
+      float: left;
+      padding: 0px 20px;
+    }
+
+    .intro-section .content-right {
+      width: 50%;
+      float: right;
+      padding: 0px 20px;
+    }
+  }
+
+</style>
