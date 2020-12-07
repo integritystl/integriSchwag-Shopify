@@ -8705,3 +8705,23 @@ $min-height-disclosure: 92px;
   }
 }
 
+
+/* ==== CUSTOM STYLES ==== */
+.site-header,
+.site-header__mobile-nav {
+  background: #1F2832;
+}
+
+.site-header {
+  border-bottom: 0px;
+}
+
+.site-header__icons-wrapper * {
+  color: #FFFFFF;
+  transition: .3s;
+}
+
+.site-header__icons-wrapper svg:hover {
+  opacity: .7;
+  transition: .3s;
+}
