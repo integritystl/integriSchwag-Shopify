@@ -108,7 +108,8 @@
 
       {% if section.settings.align_logo == 'left' %}
         <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
-          {% include 'site-nav', linklist: section.settings.main_linklist %}
+          <!-- commenting out defualt desktop menu for slideout menu -->
+          <!-- {% include 'site-nav', linklist: section.settings.main_linklist %} -->
         </nav>
       {% endif %}
 
@@ -144,7 +145,7 @@
             </div>
           </a>
 
-          <a href="/collections/all" class="shop-now-button">Shop Now</a>
+          <a href="/collections/all" class="shop-now-button btn">Shop Now</a>
 
           {% unless linklists[section.settings.main_linklist] == blank %}
             <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
@@ -157,7 +158,20 @@
       </div>
     </div>
 
-    <nav class="mobile-nav-wrapper medium-up--hide" role="navigation">
+    <nav class="mobile-nav-wrapper" role="navigation">
+
+      <div class="nav-header">
+        {% unless linklists[section.settings.main_linklist] == blank %}
+          <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
+            {% include 'icon-hamburger' %}
+            {% include 'icon-close' %}
+          </button>
+        {% endunless %}
+
+        <span class="nav-tile">Navigation</span>
+        <hr />
+      </div>
+
       <ul id="MobileNav" class="mobile-nav">
         {% for link in linklists[section.settings.main_linklist].links %}
           {%- assign outerLoopIndex = forloop.index -%}
@@ -255,7 +269,8 @@
 
   {% if section.settings.align_logo == 'center' %}
   <nav class="small--hide border-bottom" id="AccessibleNav" role="navigation">
-    {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+    <!-- commenting out default desktop nav for slideout navigation implementation -->
+    <!-- {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %} -->
   </nav>
   {% endif %}
 </div>

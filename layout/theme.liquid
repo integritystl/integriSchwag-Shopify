@@ -111,6 +111,8 @@
 
 <body class="template-{{ request.page_type | handle }}">
 
+  <div class="content-color-overlay js-mobile-nav-toggle"></div>
+
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {%- if settings.enable_ajax -%}
