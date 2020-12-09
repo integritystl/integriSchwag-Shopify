@@ -63,7 +63,7 @@
     {%- assign footer_item = 'site-footer__item--one-third' -%}
     {%- for block in section.blocks -%}
       {%- if block.type == 'newsletter' -%}
-        {%- assign footer_item = 'site-footer__item--one-quarter' -%}
+        {%- assign footer_item = 'site-footer__item--one-third' -%}
         {%- break -%}
       {%- endif -%}
     {%- endfor -%}
@@ -145,7 +145,7 @@
         <div class="site-footer__item
                     {% if section.blocks.size == 1 %} site-footer__item--center{% endif %}
                     {{ footer_item }}
-                    {% if block.type == 'newsletter' and section.blocks.size == 3 %}site-footer-newsletter__one-half{% endif %}"
+                    {% if block.type == 'newsletter' and section.blocks.size == 3 %}site-footer-newsletter__one-third{% endif %}"
              {{ block.shopify_attributes }}>
           <div class="site-footer__item-inner site-footer__item-inner--{{ block.type }}">
 
@@ -337,7 +337,7 @@
         </div>
       {%- endif -%}
 
-      <div class="grid__item small--one-whole {{ copyright_show_class }} site-footer-item-align-right">
+      <div class="grid__item small--one-whole {{ copyright_show_class }} site-footer-item-align-right copyright-container">
         <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
         <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small>
       </div>
@@ -729,7 +729,7 @@
       "name": {
         "da": "Tekst",
         "de": "Text",
-        "en": "Text",
+        "en": "Custom HTML",
         "es": "Texto",
         "fi": "Teksti",
         "fr": "Texte",
@@ -792,12 +792,12 @@
           }
         },
         {
-          "type": "richtext",
+          "type": "html",
           "id": "text",
           "label": {
             "da": "Tekst",
             "de": "Text",
-            "en": "Text",
+            "en": "Custom HTML",
             "es": "Texto",
             "fi": "Teksti",
             "fr": "Texte",

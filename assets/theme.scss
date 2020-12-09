@@ -8808,6 +8808,15 @@ $kinda-black: #1F2832;
     padding-right: 55px;
   } 
 
+  .site-header__logo-image img {
+    transition: .7s;
+  }
+
+  .site-header__logo-image img:hover {
+    opacity: .8;
+    transition: .7s;
+  }
+
   .site-header__icons-wrapper {
 
     .shop-now-button {
@@ -8860,6 +8869,16 @@ nav.js-menu--is-open {
 .mobile-nav-wrapper {
 
   .nav-header {
+    padding: 80px 50px 25px 50px;
+
+    .nav-title {
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    hr {
+      margin: 15px 0px;
+    }
 
     .site-header__menu,
     .nav-title {
@@ -8871,15 +8890,41 @@ nav.js-menu--is-open {
       outline: none;
     }
 
+    .js-mobile-nav-toggle {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+    }
+
   } /* nav-header */
 
   .mobile-nav {
+    padding: 0px 25px;
+
     a,
     .mobile-nav__label,
     .mobile-nav__icon,
     .mobile-nav__return-btn{
       color: #FFFFFF;
       text-transform: uppercase;
+    }
+
+    .mobile-nav__item {
+      border-bottom: 0px;
+    }
+
+    .mobile-nav__link,
+    .mobile-nav__return,
+    .mobile-nav__return-btn,
+    * {
+      outline: none !important;
+    }
+
+    .mobile-nav__link--active {
+      span {
+        border-bottom: 0px;
+        font-weight: bold;
+      }
     }
 
   } /* mobile-nav */
@@ -8905,6 +8950,90 @@ body.menu-open {
   background: rgba(0,0,0,.55);
   z-index: 9998;
 }
+
+
+/* FOOTER */
+footer {
+
+  a,
+  .site-footer__rte a {
+    text-decoration: none !important;
+    border-bottom: 0px !important;
+  }
+
+  h4, .h4{
+    display: none !important;
+  }
+
+  .site-footer__item-inner.site-footer__item-inner--link_list {
+    text-align: center;
+    width: 100%;
+
+    li {
+
+      a {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .site-footer__item-inner.site-footer__item-inner--text {
+    margin: 0 auto;
+  }
+
+  .site-footer__hr {
+    border-bottom: 1px solid #FFFFFF;
+  }
+
+} /* footer */
+
+@media screen and (min-width: 750px) {
+  footer.site-footer {
+    padding: 35px 0px;
+
+    .site-footer__item-inner.site-footer__item-inner--link_list {
+      text-align: left;
+      width: 100%;
+    }
+
+    .site-footer__content {
+      align-items: center;
+    }
+
+
+    .site-footer__item-inner--link_list {
+
+      .site-footer__linklist {
+
+        li {
+          display: inline-block;
+        }
+      }
+    }
+
+    .site-footer__item {
+      margin-bottom: 10px;
+    }
+
+    .site-footer__hr {
+      margin: 25px 0px;
+    }
+
+  } /* footer */
+
+}
+
+
+@media screen and (min-width: 1150px) {
+
+  footer {
+    .input-group {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+
 
 
 
