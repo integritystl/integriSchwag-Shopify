@@ -1,17 +1,41 @@
 <!-- start intro section block -->
 <div class="intro-section">
   <div class="page-width">
-    <div class="content-left">
-        <h1>{{section.settings.tagline-text}}</h1>
-        {{section.settings.text-below-header}}
 
-        <p><a href="{{section.settings.button-link}}" class="button">{{section.settings.button-text}}</a></p>
+    <div class="content-left">
+      <h1>{{section.settings.tagline-text}}</h1>
+      {{section.settings.text-below-header}}
+
+      <p><a href="{{section.settings.button-link}}" class="btn">{{section.settings.button-text}}</a></p>
     </div>
 
     <div class="content-right">
         <div class="featured-product">
-            {{section.settings.featured-product.images}}
-        </div>
+
+            <div class="featured-image">
+
+              <a href="{{ all_products[section.settings.featured-product].url }}"><img src="https://cdn.shopify.com/s/files/1/0359/5131/3027/{{all_products[section.settings.featured-product].featured_image}}" /></a>
+
+              <div class="product-details">
+                <div class="product-category">{{ all_products[section.settings.featured-product].category }}</div>
+
+                <div class="product-title">
+                  <a href="{{ all_products[section.settings.featured-product].url }}">{{ all_products[section.settings.featured-product].title }}</a>
+                </div>
+
+                <div class="product-price"><a href="{{ all_products[section.settings.featured-product].url }}">${{ all_products[section.settings.featured-product].price | divided_by: 100 }}</a></div>
+              </div> <!-- product-details -->
+
+            </div> <!-- featured-image -->
+
+
+            <div class="image-thumbnails">
+              {% for image in all_products[section.settings.featured-product].images %} ​
+                <img src="{{ image.src | img_url: 'large' }}" /> ​
+              {% endfor %}
+            </div>
+
+        </div> <!-- featured-product -->
     </div>
   </div>
 </div>
@@ -55,24 +79,34 @@
   }
 {% endschema %}
 
-<style>
+{% javascript %}
+  <!-- javascript goes here -->
 
-  .intro-section h1 {
-    text-transform: uppercase;
-  }
+  $( ".featured-product .image-thumbnails img" ).click(function() {
+    var selectedImageURL = $(this).attr('src');
+    selectedImageURL.toString();
+    console.log(selectedImageURL);
 
-  @media screen and (min-width: 750px) {
-    .intro-section .content-left {
-      width: 50%;
-      float: left;
-      padding: 0px 20px;
-    }
+    $(this).toggleClass("active");
 
-    .intro-section .content-right {
-      width: 50%;
-      float: right;
-      padding: 0px 20px;
-    }
-  }
+    $( ".featured-product .featured-image img" ).attr('src', selectedImageURL)
+  });
 
-</style>
+
+  $( ".featured-product .image-thumbnails img" ).hover(function() {
+    var selectedImageURL = $(this).attr('src');
+    selectedImageURL.toString();
+    console.log(selectedImageURL);
+    $(this).toggleClass("active");
+
+
+    $( ".featured-product .featured-image img" ).attr('src', selectedImageURL)
+  });
+
+{% endjavascript %}
+
+{% stylesheet 'scss' %}
+  <!-- you can add styles here, if ya want -->
+{% endstylesheet %}
+
+

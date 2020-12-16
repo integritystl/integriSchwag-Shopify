@@ -1,0 +1,74 @@
+<!-- start above footer section block -->
+<div class="above-footer-section" style="background-color: {{section.settings.bg-color}};">
+  <div class="page-width">
+
+    <div class="image-text-container">
+
+      <div class="icon-image-container">
+        <img src="https://cdn.shopify.com/s/files/1/0359/5131/3027/{{section.settings.icon-image}}" />
+      </div>
+
+      <div class="section-text-container">
+        {{section.settings.text-content}}
+      </div>
+
+    </div>
+
+      <div class="clear"></div>
+
+      <div class="section-button-container">
+        <a class="btn" href="{{section.settings.button-link}}">{{section.settings.button-text}}</a>
+      </div>
+    
+  </div> <!-- page-width -->
+</div> <!-- above-footer-section -->
+
+{% schema %}
+  {
+    "name": "Above Footer",
+    "settings": [
+      {
+        "type": "color",
+        "label": "Section Background Color",
+        "id": "bg-color"
+      },
+      {
+        "type": "image_picker",
+        "label": "Icon/Image",
+        "id": "icon-image"
+      },
+      {
+        "type": "richtext",
+        "label": "Text",
+        "id": "text-content"
+      },
+      {
+        "type": "text",
+        "label": "Button Text",
+        "id": "button-text"
+      },
+      {
+        "type": "url",
+        "label": "Button Link",
+        "id": "button-link"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Custom Blocks",
+        "name": "Above Footer"
+      }
+    ]
+  }
+{% endschema %}
+
+{% javascript %}
+  <!-- javascript goes here -->
+
+{% endjavascript %}
+
+{% stylesheet 'scss' %}
+  <!-- you can add styles here, if ya want -->
+{% endstylesheet %}
+
+

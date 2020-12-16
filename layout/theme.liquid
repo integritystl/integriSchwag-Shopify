@@ -123,11 +123,13 @@
 
   <div class="page-container drawer-page-content" id="PageContainer">
     
-    <div class="site-header">{% render 'breadcrumbs' %}</div>
+    <div class="page-width breadcrumbs">{% render 'breadcrumbs' %}</div>
 
     <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
+
+    {% section 'above-footer' %}
 
     {% section 'footer' %}
 
