@@ -9431,3 +9431,26 @@ footer {
 .hr--invisible {
   margin-top: 10px;
 }
+
+@media screen and (max-width: 395px) {
+  .list--inline.pagination .btn.btn--tertiary.btn--narrow{
+    padding: 10px !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  ul li a {
+    line-break: anywhere;
+  }
+}
+
+@media screen and (max-width: 442px) {
+  .template-product .social-sharing {
+    display: block !important;
+
+    .btn--share {
+      display: block !important;
+      width: 100% !important;
+    }
+  }
+}
